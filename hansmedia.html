@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Han’s Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      color: #111111;
+      overflow-x: hidden;
+    }
+
+    /* ---------- 전체 레이아웃 ---------- */
+    .container {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* 미래지향적 금속 각진 로고 느낌 */
+    .logo {
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #111 0%, #444 40%, #999 80%, #eee 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      user-select: none;
+    }
+
+    /* 서브 텍스트 */
+    .tagline {
+      margin-top: 8px;
+      font-size: clamp(14px, 2.3vw, 18px);
+      color: #444;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* 미래지향 버튼 */
+    .enter-btn {
+      margin-top: 40px;
+      padding: 14px 36px;
+      border: 2px solid #111;
+      border-radius: 50px;
+      background: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .enter-btn:hover {
+      background: #111;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.20);
+    }
+
+    /* 배경에 흐르는 라인 (사이버트럭 분위기) */
+    .lines {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .line {
+      position: absolute;
+      width: 120%;
+      height: 2px;
+      background: #e5e5e5;
+      opacity: 0.4;
+      left: -10%;
+      animation: slide 4s linear infinite;
+      transform: skew(-20deg);
+    }
+
+    .line:nth-child(1) { top: 20%; animation-delay: 0s; }
+    .line:nth-child(2) { top: 40%; animation-delay: 1s; }
+    .line:nth-child(3) { top: 60%; animation-delay: 2s; }
+    .line:nth-child(4) { top: 80%; animation-delay: 3s; }
+
+    @keyframes slide {
+      from { transform: translateX(-20%) skew(-20deg); }
+      to   { transform: translateX(20%)  skew(-20deg); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- 배경 라인 -->
+    <div class="lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <!-- 중앙 로고 -->
+    <div class="logo">HAN’S MEDIA</div>
+    <div class="tagline">Neutral · Data Driven · Future Journalism</div>
+
+    <!-- 버튼 -->
+    <button class="enter-btn" onclick="alert('다음 페이지 연결 예정!')">ENTER</button>
+  </div>
+
+</body>
+</html>
